@@ -37,7 +37,7 @@ class BubblesViewController: UIViewController {
         view.backgroundColor = .white
         
         instructions = UILabel()
-        instructions.text = "What are your interests?"
+        instructions.text = "What are your interests in CS?"
         instructions.font = UIFont.boldSystemFont(ofSize: 18)
         instructions.translatesAutoresizingMaskIntoConstraints = false
         

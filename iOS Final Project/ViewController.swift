@@ -25,6 +25,16 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         self.title = "CourseRecommender"
         view.backgroundColor = .white
         
+        
+//        let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
+//        backgroundImage.image = UIImage(named: "Background-2.jpg")
+//        backgroundImage.contentMode =  UIViewContentMode.scaleAspectFill
+//        self.view.insertSubview(backgroundImage, at: 0)
+//        
+//        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "Background-2.jpg")!)
+        
+        
+        
         classList.append("CS 3410")
         classList.append ("CS 3110")
         classList.append ("CS 4300")
@@ -45,6 +55,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         tableView.bounces = true
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.register(SearchClassTableViewCell.self, forCellReuseIdentifier: "classSearchCell")
+//        tableView.backgroundColor = UIColor.clear
         
         self.tableView.separatorStyle = UITableViewCellSeparatorStyle.none
         
@@ -99,6 +110,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let classTitle = classList[indexPath.row]
        
         cell.classLabel.text = classTitle
+//        cell.contentView.backgroundColor = UIColor.clear
         cell.setNeedsUpdateConstraints()
         
         return cell
