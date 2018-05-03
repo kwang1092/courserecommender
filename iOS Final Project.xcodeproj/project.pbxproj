@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		630B8AAF209AE12D00941497 /* BubblesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630B8AAE209AE12D00941497 /* BubblesViewController.swift */; };
+		630B8AB1209AF4F300941497 /* BubblesViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630B8AB0209AF4F300941497 /* BubblesViewController2.swift */; };
 		63BA8F362094F69F0072B976 /* LoadingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BA8F352094F69F0072B976 /* LoadingScreen.swift */; };
 		63CA2B4E209AB7B400A022EA /* SearchClassTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CA2B4D209AB7B400A022EA /* SearchClassTableViewCell.swift */; };
 		63E1FC662093C4E50048E152 /* NavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E1FC652093C4E50048E152 /* NavViewController.swift */; };
@@ -23,6 +24,7 @@
 
 /* Begin PBXFileReference section */
 		630B8AAE209AE12D00941497 /* BubblesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubblesViewController.swift; sourceTree = "<group>"; };
+		630B8AB0209AF4F300941497 /* BubblesViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubblesViewController2.swift; sourceTree = "<group>"; };
 		63BA8F352094F69F0072B976 /* LoadingScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingScreen.swift; sourceTree = "<group>"; };
 		63CA2B4D209AB7B400A022EA /* SearchClassTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchClassTableViewCell.swift; sourceTree = "<group>"; };
 		63E1FC652093C4E50048E152 /* NavViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavViewController.swift; sourceTree = "<group>"; };
@@ -76,6 +78,7 @@
 				63FF530A2093ACE300F1B120 /* AppDelegate.swift */,
 				63FF530C2093ACE300F1B120 /* ViewController.swift */,
 				630B8AAE209AE12D00941497 /* BubblesViewController.swift */,
+				630B8AB0209AF4F300941497 /* BubblesViewController2.swift */,
 				63CA2B4D209AB7B400A022EA /* SearchClassTableViewCell.swift */,
 				63BA8F352094F69F0072B976 /* LoadingScreen.swift */,
 				63E1FC6720949F7F0048E152 /* ClassViewController.swift */,
@@ -228,6 +231,7 @@
 				63E1FC6C2094A2DC0048E152 /* Classes.swift in Sources */,
 				63E1FC662093C4E50048E152 /* NavViewController.swift in Sources */,
 				63E1FC6A2094A0E20048E152 /* ClassTableViewCell.swift in Sources */,
+				630B8AB1209AF4F300941497 /* BubblesViewController2.swift in Sources */,
 				63FF530B2093ACE300F1B120 /* AppDelegate.swift in Sources */,
 				630B8AAF209AE12D00941497 /* BubblesViewController.swift in Sources */,
 			);

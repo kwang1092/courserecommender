@@ -53,9 +53,9 @@ class LoadingScreen: UIViewController {
         
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 5.0) {
             self.loadingIcon.stopAnimating()
-            let viewController = UINavigationController(rootViewController: ViewController())
-            viewController.modalTransitionStyle = .crossDissolve
-            self.present(viewController, animated: true, completion: nil)
+            let modalVC = BubblesViewController ()
+            modalVC.modalTransitionStyle = .crossDissolve
+            self.present(modalVC, animated: true, completion: nil)
         }
         
         view.addSubview(bearLogo)

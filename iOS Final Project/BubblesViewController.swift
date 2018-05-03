@@ -41,6 +41,13 @@ class BubblesViewController: UIViewController {
         instructions.font = UIFont.boldSystemFont(ofSize: 18)
         instructions.translatesAutoresizingMaskIntoConstraints = false
         
+        dynamicButton.setStyle(.checkMark, animated: true)
+        dynamicButton.lineWidth           = 3
+        dynamicButton.strokeColor         = .red
+        dynamicButton.highlightStokeColor = .gray
+        dynamicButton.addTarget(self, action: #selector(doneButtonPressed), for: .touchUpInside)
+        dynamicButton.translatesAutoresizingMaskIntoConstraints = false
+        
         let magneticView = MagneticView(frame: self.view.bounds)
         magnetic = magneticView.magnetic
         let node8 = Node(text: "Machine Learning", image: UIImage(named: "ml.png"), color: .red, radius: 60)
@@ -80,6 +87,7 @@ class BubblesViewController: UIViewController {
         
         view.addSubview(magneticView)
         view.addSubview(instructions)
+        view.addSubview(dynamicButton)
         
         setUpConstraints ()
         
@@ -94,6 +102,11 @@ class BubblesViewController: UIViewController {
             instructions.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
             instructions.heightAnchor.constraint(equalToConstant: 44)
             ])
+        NSLayoutConstraint.activate([
+            dynamicButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            dynamicButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -8),
+            dynamicButton.heightAnchor.constraint(equalToConstant:44)
+            ])
     }
     
     func magnetic(_ magnetic: Magnetic, didSelect node: Node) {
@@ -104,6 +117,15 @@ class BubblesViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    @objc func doneButtonPressed (sender:UIButton) {
+        let modalVC = BubblesViewController2 ()
+        modalVC.modalTransitionStyle = .crossDissolve
+        //modalVC.labelTitle = blueButton.title(for: .normal)
+        //modalVC.delegate = self
+        present(modalVC, animated: true, completion: nil)
+        
     }
     
 

@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         self.window = UIWindow(frame: UIScreen.main.bounds)
-        self.window?.rootViewController = BubblesViewController()//LoadingScreen() //UINavigationController(rootViewController: ViewController())
+        self.window?.rootViewController = LoadingScreen() //UINavigationController(rootViewController: ViewController())
         self.window?.makeKeyAndVisible()
         
         return true
