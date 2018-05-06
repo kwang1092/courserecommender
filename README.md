@@ -4,7 +4,7 @@ App Tagline: Course recommendations and plannner
 
 Screenshots:
 ![loading screen](https://i.imgur.com/YRb51LL.png)
-
+![Bubbles1](https://i.imgur.com/lXtSzt7.png)
 Backend Github Repo: https://github.com/abdullah248/courserecommender-backend
 
 Short Description: Bear Planner is designed to help Cornell students struggling to decide what courses to take in upcoming semesters. Currently, Bear Planner allows CS students to input a list of their classes taken and CS interests and outputs a list of suggested classes that matches these interests. We intended to allow users to post reviews for different classes and professors, rate each one, and suggest classes that accounted for missing major/college requirements. Unfortunately, we had issues deploying the backend portion, so the app can only make suggestions based on interests. However, all the endpoints for the class and professor reviews are set up along with the database so if we were able to deploy everything would be fully functional. This idea can be easily scaled up in the future to allow for a variety of different majors from different colleges.
