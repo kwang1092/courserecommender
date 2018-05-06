@@ -12,5 +12,4 @@ target 'iOS Final Project' do
   pod 'Magnetic'
   pod 'Alamofire'
   pod 'SwiftyJSON'
-
 end

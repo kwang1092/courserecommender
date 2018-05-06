@@ -7,6 +7,7 @@
 //
 
 import UIKit
+//import FaveButton
 
 class ClassTableViewCell: UITableViewCell {
     
@@ -16,6 +17,7 @@ class ClassTableViewCell: UITableViewCell {
     var classLabel: UILabel!
     var classRating: UILabel!
     var classProfessor: UILabel!
+    //var saveButton: TTAnimationButton!
     //var classDescription: UITextField!
 
     override func awakeFromNib() {
@@ -45,6 +47,13 @@ class ClassTableViewCell: UITableViewCell {
         professorDescriptor.translatesAutoresizingMaskIntoConstraints = false
         ratingDescriptor.translatesAutoresizingMaskIntoConstraints = false
         
+        
+//        saveButton = TTAnimationButton(type: .system)
+//        saveButton.setImage(UIImage (named: "heart.png"), for: .normal)
+//        //saveButton.addTarget(self, action: #selector(saveButtonPressed), for: .touchUpInside)
+//        saveButton.translatesAutoresizingMaskIntoConstraints = false
+        
+        
         contentView.addSubview(classLabel)
         //contentView.addSubview(classDescription)
         contentView.addSubview(classProfessor)
@@ -53,6 +62,7 @@ class ClassTableViewCell: UITableViewCell {
         contentView.addSubview(classDescriptor)
         contentView.addSubview(professorDescriptor)
         contentView.addSubview(ratingDescriptor)
+        //contentView.addSubview(saveButton)
         
     }
     
@@ -99,6 +109,13 @@ class ClassTableViewCell: UITableViewCell {
             classRating.topAnchor.constraint(equalTo: classProfessor.bottomAnchor, constant: 8),
             classRating.heightAnchor.constraint(equalToConstant: 16)
             ])
+        
+//        NSLayoutConstraint.activate([
+//            saveButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8),
+//            saveButton.topAnchor.constraint(equalTo: classDescriptor.topAnchor, constant: 24),
+//            saveButton.heightAnchor.constraint(equalToConstant: 50)
+//            ])
+        
         
         
         

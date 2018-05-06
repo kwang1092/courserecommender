@@ -10,6 +10,49 @@ import UIKit
 import DynamicButton
 import Magnetic
 
+import Foundation
+
+import Alamofire
+import SwiftyJSON
+
+//class Network {
+//
+//    private static let CSendpoint = "https://classes.cornell.edu/api/2.0/search/classes.json?roster=SP18&subject=CS"
+//
+//    static func getRecipes() -> [Classes] {
+//
+////        let parameters: Parameters = [
+////            "i" : query.replacingOccurrences(of: " ", with: ","),
+////            ]
+//
+//        Alamofire.request(CSendpoint).validate().responseJSON { (response) in
+//
+//            switch response.result {
+//
+//            case .success(let json):
+//
+//                let json = JSON(json)
+//                var returnedClasses: [Classes] = []
+//
+//                for recipeJSON in json["results"]["data"]["classes"].arrayValue  {
+//                    let addedClass = Classes(className: recipeJSON["catalogNbr"], professor: "N/A", rating: 4.0, classDescription: recipeJSON["description"])
+//                    returnedClasses.append(addedClass)
+//                }
+//
+//                //completion(returnedClasses)
+//
+//            case .failure(let error):
+//                print("[Network] Error:", error)
+//                //completion([])
+//
+//            }
+//
+//        }
+//
+//
+//    }
+//
+//}
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, SaveButtonDelegate {
     
     var dynamicButton: DynamicButton = DynamicButton ()
@@ -26,7 +69,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        self.title = "CourseRecommender"
+        self.title = "BearPlanner"
         view.backgroundColor = .white
         
         

@@ -14,7 +14,9 @@ class LoadingScreen: UIViewController {
     var courseRecommender: UILabel!
     var bearLogo: UIImageView!
     var loadingIcon: NVActivityIndicatorView!
-    //var bearLogo2: UIImageView!
+    var descriptor: UILabel!
+    var descriptor2: UILabel!
+    var descriptor3: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,9 +32,26 @@ class LoadingScreen: UIViewController {
 //        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "Background-2.jpg")!)
         
         courseRecommender = UILabel()
-        courseRecommender.text = "CourseRecommender"
+        courseRecommender.text = "BearPlanner"
+        courseRecommender.textColor = .red
         courseRecommender.font = UIFont.boldSystemFont(ofSize: 30)
         courseRecommender.translatesAutoresizingMaskIntoConstraints = false
+        
+        descriptor = UILabel ()
+        descriptor.text = "iOS Developer: Robert Li"
+        descriptor.font = UIFont.boldSystemFont(ofSize: 18)
+        descriptor.translatesAutoresizingMaskIntoConstraints = false
+        
+        descriptor2 = UILabel ()
+        descriptor2.text = "Designer: Yiwen Sun"
+        descriptor2.font = UIFont.boldSystemFont(ofSize: 18)
+        descriptor2.translatesAutoresizingMaskIntoConstraints = false
+        
+        descriptor3 = UILabel ()
+        descriptor3.text = "Backend: Abdullah Islam, Kevin Wang"
+        descriptor3.font = UIFont.boldSystemFont(ofSize: 18)
+        descriptor3.translatesAutoresizingMaskIntoConstraints = false
+        
         
         
         bearLogo = UIImageView ()
@@ -61,7 +80,9 @@ class LoadingScreen: UIViewController {
         view.addSubview(bearLogo)
         view.addSubview (loadingIcon)
         view.addSubview(courseRecommender)
-//        view.addSubview(bearLogo2)
+        view.addSubview(descriptor)
+        view.addSubview (descriptor2)
+        view.addSubview (descriptor3)
         
         setUpConstraints ()
         // Do any additional setup after loading the view.
@@ -79,14 +100,23 @@ class LoadingScreen: UIViewController {
             courseRecommender.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 44),
             courseRecommender.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
             //courseRecommender.widthAnchor.constraint(equalTo: view.widthAnchor),
-            courseRecommender.heightAnchor.constraint(equalToConstant: 120)
+            courseRecommender.heightAnchor.constraint(equalToConstant: 44)
             ])
-//        NSLayoutConstraint.activate([
-//            bearLogo2.topAnchor.constraint(equalTo: courseRecommender.bottomAnchor, constant: 32),
-//            bearLogo2.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor, constant: -60),
-//            bearLogo2.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor, constant: 60),
-//            bearLogo2.heightAnchor.constraint(equalToConstant: 120)
-//            ])
+        NSLayoutConstraint.activate([
+            descriptor.topAnchor.constraint(equalTo: courseRecommender.bottomAnchor, constant: 60),
+            descriptor.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
+            descriptor.heightAnchor.constraint(equalToConstant: 44)
+            ])
+        NSLayoutConstraint.activate([
+            descriptor2.topAnchor.constraint(equalTo: descriptor.bottomAnchor, constant: 8),
+            descriptor2.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
+            descriptor2.heightAnchor.constraint(equalToConstant: 44)
+            ])
+        NSLayoutConstraint.activate([
+            descriptor3.topAnchor.constraint(equalTo: descriptor2.bottomAnchor, constant: 8),
+            descriptor3.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
+            descriptor3.heightAnchor.constraint(equalToConstant: 44)
+            ])
 
     }
 

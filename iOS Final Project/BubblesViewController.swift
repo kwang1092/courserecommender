@@ -112,13 +112,13 @@ class BubblesViewController: UIViewController, MagneticDelegate {
     
     func magnetic(_ magnetic: Magnetic, didSelect node: Node) {
         selectedChildren.append(node)
-        print(selectedChildren)
+        //print(selectedChildren)
     }
     func magnetic(_ magnetic: Magnetic, didDeselect node: Node) {
         //remove from array if exists
         let indexOfNode = selectedChildren.index(of: node)!
         selectedChildren.remove(at: indexOfNode)
-        print (node.text!)
+        //print (node.text!)
     }
 
     override func didReceiveMemoryWarning() {
