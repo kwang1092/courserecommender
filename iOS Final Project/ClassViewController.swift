@@ -30,6 +30,8 @@ class ClassViewController: UIViewController, UITableViewDataSource, UITableViewD
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.register(ClassTableViewCell.self, forCellReuseIdentifier: "classCell")
         
+        self.tableView.separatorStyle = UITableViewCellSeparatorStyle.none
+        
         view.addSubview(tableView)
         
         setUpConstraints()
@@ -60,7 +62,7 @@ class ClassViewController: UIViewController, UITableViewDataSource, UITableViewD
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 120
+        return 90
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -68,16 +70,23 @@ class ClassViewController: UIViewController, UITableViewDataSource, UITableViewD
         let classTitle = returnedClasses[indexPath.row].className
         let classProfessor = returnedClasses[indexPath.row].professor
         let classRating = returnedClasses[indexPath.row].rating
-        let classDescription = returnedClasses[indexPath.row].classDescription
+        //let classDescription = returnedClasses[indexPath.row].classDescription
         
         
         cell.classLabel.text = classTitle
         cell.classProfessor.text = classProfessor
         cell.classRating.text = String(classRating)
-        cell.classDescription.text = classDescription
+        //cell.classDescription.text = classDescription
         cell.setNeedsUpdateConstraints()
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        var cellColors = [UIColor(red:0.95, green:0.50, blue:0.27, alpha:1.0),UIColor(red:0.58, green:0.13, blue:0.59, alpha:1.0),UIColor(red:0.34, green:0.98, blue:0.73, alpha:1.0),UIColor(red:0.02, green:0.80, blue:0.91, alpha:1.0)]
+        cell.contentView.backgroundColor = cellColors[indexPath.row % cellColors.count]
+        cell.layer.cornerRadius = 10
+        cell.layer.masksToBounds = true
     }
     
 //    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

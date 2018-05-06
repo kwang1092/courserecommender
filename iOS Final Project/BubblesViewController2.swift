@@ -10,13 +10,14 @@ import UIKit
 import Magnetic
 import DynamicButton
 
-class BubblesViewController2: UIViewController {
+class BubblesViewController2: UIViewController, MagneticDelegate {
     
     var magnetic: Magnetic!
-    var magneticDelegate: MagneticDelegate? // magnetic delegate
+    //var magneticDelegate: MagneticDelegate? // magnetic delegate
     var allowsMultipleSelection: Bool = true // controls whether you can select multiple nodes. defaults to true
     var selectedChildren: [Node] = [] // returns selected chidren
     var instructions: UILabel!
+    var nodesFromB1: [Node] = []
     
     var dynamicButton: DynamicButton = DynamicButton ()
     
@@ -78,7 +79,7 @@ class BubblesViewController2: UIViewController {
         magnetic.addChild(node11)
         magnetic.addChild(node12)
         
-        
+        magnetic.magneticDelegate = self
         
         view.addSubview(magneticView)
         view.addSubview(instructions)
@@ -106,7 +107,14 @@ class BubblesViewController2: UIViewController {
     
     func magnetic(_ magnetic: Magnetic, didSelect node: Node) {
         selectedChildren.append(node)
-        print (selectedChildren)
+        print(selectedChildren)
+    }
+    
+    func magnetic(_ magnetic: Magnetic, didDeselect node: Node) {
+        //remove from array if exists
+        let indexOfNode = selectedChildren.index(of: node)!
+        selectedChildren.remove(at: indexOfNode)
+        print (node.text!)
     }
     
     override func didReceiveMemoryWarning() {
@@ -115,9 +123,14 @@ class BubblesViewController2: UIViewController {
     }
     
     @objc func doneButtonPressed (sender:UIButton) {
-        let viewController = UINavigationController(rootViewController: ViewController())
-        viewController.modalTransitionStyle = .crossDissolve
-        self.present(viewController, animated: true, completion: nil)
+        let vc = ViewController()
+        let navVC = UINavigationController(rootViewController: vc)
+        vc.nodesFromB1 = nodesFromB1
+        vc.nodesFromB2 = selectedChildren
+        navVC.modalTransitionStyle = .crossDissolve
+        present(navVC, animated: true, completion: nil)
+        
+        //navigationController?.pushViewController(navVC, animated: true)
     }
     
     

@@ -1,26 +1,34 @@
 PODS:
+  - Alamofire (4.7.2)
   - DynamicButton (5.0.0)
   - Magnetic (2.0.6)
   - NVActivityIndicatorView (4.2.0):
     - NVActivityIndicatorView/Presenter (= 4.2.0)
   - NVActivityIndicatorView/Presenter (4.2.0)
+  - SwiftyJSON (4.1.0)
 
 DEPENDENCIES:
+  - Alamofire
   - DynamicButton
   - Magnetic
   - NVActivityIndicatorView
+  - SwiftyJSON
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
+    - Alamofire
     - DynamicButton
     - Magnetic
     - NVActivityIndicatorView
+    - SwiftyJSON
 
 SPEC CHECKSUMS:
+  Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
   DynamicButton: 4c2fef968e4aa0a8a6ed7ca6b8a58c8e21a36cdc
   Magnetic: 1c428d05e87da514ed5d3cad8da1e7696393a652
   NVActivityIndicatorView: 75c9634073e03b31d7e2748cd2417feab1206195
+  SwiftyJSON: c29297daf073d2aa016295d5809cdd68045c39b3
 
-PODFILE CHECKSUM: b93a2fc0e8521a9b054530f2eb14f25f218f3f1a
+PODFILE CHECKSUM: ca8695e9e5727b1c52ab1907a8597de14231a34f
 
 COCOAPODS: 1.5.0

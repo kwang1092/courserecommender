@@ -8,11 +8,15 @@
 
 import UIKit
 import DynamicButton
+import Magnetic
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, SaveButtonDelegate {
     
     var dynamicButton: DynamicButton = DynamicButton ()
     var classList:[String] = []
+    
+    var nodesFromB1: [Node] = []
+    var nodesFromB2: [Node] = []
     
     
     var tableView: UITableView!
@@ -35,9 +39,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         
         
-        classList.append("CS 3410")
-        classList.append ("CS 3110")
-        classList.append ("CS 4300")
+//        classList.append("CS 3410")
+//        classList.append ("CS 3110")
+//        classList.append ("CS 4300")
         
         dynamicButton.setStyle(.arrowRight, animated: true)
         dynamicButton.lineWidth           = 3
@@ -143,6 +147,16 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let navVC = ClassViewController()
         navigationController?.pushViewController(navVC, animated: true)
     }
+    
+    private func convertNodeToList (lst: [Node]) -> [String] {
+        var acc : [String] = []
+        for i in lst {
+            acc.append (i.text!)
+        }
+        return acc
+    }
+    
+    //private func
     
     
 }

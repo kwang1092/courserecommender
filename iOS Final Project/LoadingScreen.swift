@@ -14,7 +14,7 @@ class LoadingScreen: UIViewController {
     var courseRecommender: UILabel!
     var bearLogo: UIImageView!
     var loadingIcon: NVActivityIndicatorView!
-    var bearLogo2: UIImageView!
+    //var bearLogo2: UIImageView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,9 +39,9 @@ class LoadingScreen: UIViewController {
         bearLogo.image = UIImage(named: "Icon_Final.png")
         bearLogo.translatesAutoresizingMaskIntoConstraints = false
         
-        bearLogo2 = UIImageView()
-        bearLogo2.image = UIImage(named: "bear2.jpg")
-        bearLogo2.translatesAutoresizingMaskIntoConstraints = false
+//        bearLogo2 = UIImageView()
+//        bearLogo2.image = UIImage(named: "bear2.jpg")
+//        bearLogo2.translatesAutoresizingMaskIntoConstraints = false
         
         loadingIcon = NVActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
         loadingIcon.center.x = view.frame.width/2
@@ -61,7 +61,7 @@ class LoadingScreen: UIViewController {
         view.addSubview(bearLogo)
         view.addSubview (loadingIcon)
         view.addSubview(courseRecommender)
-        view.addSubview(bearLogo2)
+//        view.addSubview(bearLogo2)
         
         setUpConstraints ()
         // Do any additional setup after loading the view.
@@ -81,12 +81,12 @@ class LoadingScreen: UIViewController {
             //courseRecommender.widthAnchor.constraint(equalTo: view.widthAnchor),
             courseRecommender.heightAnchor.constraint(equalToConstant: 120)
             ])
-        NSLayoutConstraint.activate([
-            bearLogo2.topAnchor.constraint(equalTo: courseRecommender.bottomAnchor, constant: 32),
-            bearLogo2.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor, constant: -60),
-            bearLogo2.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor, constant: 60),
-            bearLogo2.heightAnchor.constraint(equalToConstant: 120)
-            ])
+//        NSLayoutConstraint.activate([
+//            bearLogo2.topAnchor.constraint(equalTo: courseRecommender.bottomAnchor, constant: 32),
+//            bearLogo2.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor, constant: -60),
+//            bearLogo2.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor, constant: 60),
+//            bearLogo2.heightAnchor.constraint(equalToConstant: 120)
+//            ])
 
     }
 

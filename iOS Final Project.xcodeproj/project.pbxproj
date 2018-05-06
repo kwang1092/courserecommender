@@ -76,15 +76,15 @@
 			isa = PBXGroup;
 			children = (
 				63FF530A2093ACE300F1B120 /* AppDelegate.swift */,
-				63FF530C2093ACE300F1B120 /* ViewController.swift */,
+				63BA8F352094F69F0072B976 /* LoadingScreen.swift */,
 				630B8AAE209AE12D00941497 /* BubblesViewController.swift */,
 				630B8AB0209AF4F300941497 /* BubblesViewController2.swift */,
+				63FF530C2093ACE300F1B120 /* ViewController.swift */,
 				63CA2B4D209AB7B400A022EA /* SearchClassTableViewCell.swift */,
-				63BA8F352094F69F0072B976 /* LoadingScreen.swift */,
+				63E1FC652093C4E50048E152 /* NavViewController.swift */,
 				63E1FC6720949F7F0048E152 /* ClassViewController.swift */,
 				63E1FC6B2094A2DC0048E152 /* Classes.swift */,
 				63E1FC692094A0E20048E152 /* ClassTableViewCell.swift */,
-				63E1FC652093C4E50048E152 /* NavViewController.swift */,
 				63FF53112093ACE700F1B120 /* Assets.xcassets */,
 				63FF53132093ACE700F1B120 /* LaunchScreen.storyboard */,
 				63FF53162093ACE700F1B120 /* Info.plist */,
@@ -184,15 +184,19 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-iOS Final Project/Pods-iOS Final Project-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/DynamicButton/DynamicButton.framework",
 				"${BUILT_PRODUCTS_DIR}/Magnetic/Magnetic.framework",
 				"${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DynamicButton.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Magnetic.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NVActivityIndicatorView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

@@ -16,13 +16,14 @@ class NavViewController: UIViewController {
     
     var classLabel:UILabel!
     var classText: UITextField!
+    var bearLogo: UIImageView!
     
     var delegate: SaveButtonDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .white
+        view.backgroundColor =  UIColor(red:0.65, green:0.66, blue:0.67, alpha:1.0)
         
         classLabel = UILabel()
         classLabel.text = "Enter class name: "
@@ -38,8 +39,13 @@ class NavViewController: UIViewController {
         let saveButton = UIBarButtonItem(title: "Save", style:.plain, target: self, action: #selector(saveButtonPressed))
         self.navigationItem.rightBarButtonItem = saveButton
         
+        bearLogo = UIImageView ()
+        bearLogo.image = UIImage(named: "Icon_Final.png")
+        bearLogo.translatesAutoresizingMaskIntoConstraints = false
+        
         view.addSubview(classLabel)
         view.addSubview(classText)
+        view.addSubview(bearLogo)
         
         setUpConstraints()
 
@@ -58,6 +64,12 @@ class NavViewController: UIViewController {
             classText.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
             classText.topAnchor.constraint(equalTo: classLabel.topAnchor),
             classText.heightAnchor.constraint(equalToConstant: 44)
+            ])
+        NSLayoutConstraint.activate([
+            bearLogo.topAnchor.constraint(equalTo: view.centerYAnchor),
+            bearLogo.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            bearLogo.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            bearLogo.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
             ])
     }
 

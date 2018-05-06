@@ -10,10 +10,13 @@ import UIKit
 
 class ClassTableViewCell: UITableViewCell {
     
+    var classDescriptor: UILabel!
+    var professorDescriptor: UILabel!
+    var ratingDescriptor: UILabel!
     var classLabel: UILabel!
     var classRating: UILabel!
     var classProfessor: UILabel!
-    var classDescription: UITextField!
+    //var classDescription: UITextField!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -23,19 +26,34 @@ class ClassTableViewCell: UITableViewCell {
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         classLabel = UILabel()
-        classDescription = UITextField()
+        //classDescription = UITextField()
         classProfessor = UILabel()
         classRating = UILabel()
         
+        classDescriptor = UILabel()
+        professorDescriptor = UILabel()
+        ratingDescriptor = UILabel()
+        classDescriptor.text = "Class:"
+        professorDescriptor.text = "Professor:"
+        ratingDescriptor.text = "Rating:"
         classLabel.translatesAutoresizingMaskIntoConstraints = false
-        classDescription.translatesAutoresizingMaskIntoConstraints = false
+        //classDescription.translatesAutoresizingMaskIntoConstraints = false
         classProfessor.translatesAutoresizingMaskIntoConstraints = false
         classRating.translatesAutoresizingMaskIntoConstraints = false
+        
+        classDescriptor.translatesAutoresizingMaskIntoConstraints = false
+        professorDescriptor.translatesAutoresizingMaskIntoConstraints = false
+        ratingDescriptor.translatesAutoresizingMaskIntoConstraints = false
         
         contentView.addSubview(classLabel)
         //contentView.addSubview(classDescription)
         contentView.addSubview(classProfessor)
         contentView.addSubview(classRating)
+        
+        contentView.addSubview(classDescriptor)
+        contentView.addSubview(professorDescriptor)
+        contentView.addSubview(ratingDescriptor)
+        
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -44,24 +62,45 @@ class ClassTableViewCell: UITableViewCell {
     
     override func updateConstraints() {
         //print (songLabel.intrinsicContentSize.width)
+        
         NSLayoutConstraint.activate([
-            classLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8),
+            classDescriptor.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8),
+            classDescriptor.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 16),
+            classDescriptor.heightAnchor.constraint(equalToConstant: 16)
+            ])
+        NSLayoutConstraint.activate([
+            professorDescriptor.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8),
+            professorDescriptor.topAnchor.constraint(equalTo: classDescriptor.bottomAnchor, constant: 8),
+            professorDescriptor.heightAnchor.constraint(equalToConstant: 16)
+            ])
+        NSLayoutConstraint.activate([
+            ratingDescriptor.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8),
+            ratingDescriptor.topAnchor.constraint(equalTo: professorDescriptor.bottomAnchor, constant: 8),
+            ratingDescriptor.heightAnchor.constraint(equalTo: classRating.heightAnchor)
+            ])
+        
+//        let tmp = max (classDescriptor.trailingAnchor, professorDescriptor.trailingAnchor, ratingDescriptor.trailingAnchor)
+    
+        NSLayoutConstraint.activate([
+            classLabel.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
             classLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 16),
             classLabel.heightAnchor.constraint(equalToConstant: 16)
             ])
         
         NSLayoutConstraint.activate([
-            classProfessor.leadingAnchor.constraint(equalTo: classLabel.leadingAnchor),
+            classProfessor.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
             classProfessor.topAnchor.constraint(equalTo: classLabel.bottomAnchor, constant: 8),
             //artistLabel.widthAnchor.constraint(equalToConstant: artistLabel.intrinsicContentSize.width),
-            classProfessor.heightAnchor.constraint(equalToConstant: 32)
+            classProfessor.heightAnchor.constraint(equalToConstant: 16)
             ])
         
         NSLayoutConstraint.activate([
-            classRating.leadingAnchor.constraint(equalTo: classLabel.leadingAnchor),
+            classRating.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
             classRating.topAnchor.constraint(equalTo: classProfessor.bottomAnchor, constant: 8),
-            classRating.heightAnchor.constraint(equalToConstant: 32)
+            classRating.heightAnchor.constraint(equalToConstant: 16)
             ])
+        
+        
         
 //        NSLayoutConstraint.activate ([
 //            classDescription.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
@@ -82,6 +121,19 @@ class ClassTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    override var frame: CGRect {
+        get {
+            return super.frame
+        }
+        set (newFrame) {
+            var frame = newFrame
+            frame.origin.x += 30
+            frame.size.width -= 2 * 30
+            
+            super.frame = frame
+        }
     }
 
 }

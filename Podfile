@@ -10,5 +10,7 @@ target 'iOS Final Project' do
   pod 'DynamicButton'
   pod 'NVActivityIndicatorView'
   pod 'Magnetic'
+  pod 'Alamofire'
+  pod 'SwiftyJSON'
 
 end

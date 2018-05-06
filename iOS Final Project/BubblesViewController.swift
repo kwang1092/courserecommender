@@ -10,10 +10,10 @@ import UIKit
 import Magnetic
 import DynamicButton
 
-class BubblesViewController: UIViewController {
+class BubblesViewController: UIViewController, MagneticDelegate {
     
     var magnetic: Magnetic!
-    var magneticDelegate: MagneticDelegate? // magnetic delegate
+    //var magneticDelegate: MagneticDelegate? // magnetic delegate
     var allowsMultipleSelection: Bool = true // controls whether you can select multiple nodes. defaults to true
     var selectedChildren: [Node] = [] // returns selected chidren
     var instructions: UILabel!
@@ -84,6 +84,7 @@ class BubblesViewController: UIViewController {
         magnetic.addChild(node14)
         magnetic.addChild(node15)
         
+        magnetic.magneticDelegate = self
         
         view.addSubview(magneticView)
         view.addSubview(instructions)
@@ -111,7 +112,13 @@ class BubblesViewController: UIViewController {
     
     func magnetic(_ magnetic: Magnetic, didSelect node: Node) {
         selectedChildren.append(node)
-        print (selectedChildren)
+        print(selectedChildren)
+    }
+    func magnetic(_ magnetic: Magnetic, didDeselect node: Node) {
+        //remove from array if exists
+        let indexOfNode = selectedChildren.index(of: node)!
+        selectedChildren.remove(at: indexOfNode)
+        print (node.text!)
     }
 
     override func didReceiveMemoryWarning() {
@@ -120,7 +127,8 @@ class BubblesViewController: UIViewController {
     }
     
     @objc func doneButtonPressed (sender:UIButton) {
-        let modalVC = BubblesViewController2 ()
+        let modalVC = BubblesViewController2()
+        modalVC.nodesFromB1 = selectedChildren
         modalVC.modalTransitionStyle = .crossDissolve
         //modalVC.labelTitle = blueButton.title(for: .normal)
         //modalVC.delegate = self
