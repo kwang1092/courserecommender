@@ -17,6 +17,14 @@ Short Description: Bear Planner is designed to help Cornell students struggling 
 
 iOS Requirements:
 
+I used autolayout throughout the app to lay out all the labels, buttons, tableviews, and images in relation to each other. There were a few instances where I used a frame-based layout because I was using Cocoapods and the documentation for the Cocoapods had a frame-based layout which was easier for me to translate into my app. 
+
+Tableviews were also used extensively to display information. The first time that I used tableviews was in the main ViewController. When the user pressed add and adds a class, a cell is added to the TableView. I also made some tweaks to the custom cells to add colors in the background, have rounded corners, and also shrink the size of the cells. I also used a tableview to display information after the user searches for classes that are similar to it. 
+
+I had both ModalViewControllers and NavigationViewControllers in my app. The app starts off with a loading screen which fizzles away after 5 seconds and displays a modal view controller which allows the user to select their interests in CS in a fashion similar to the Bubbles found in Apple Music. By pressing the right arrow, the user is then presented another ModalViewController which prompts them to select their interests in areas that are unrelated to CS. Finally, when the user presses the right arrow again, they are then presented a navigation view controller with the rootviewcontroller being the new screen which allows users to see the classes they have added to the application. Pressing Add or Search will push navigation view controllers onto the stack and users can go back and forth between them through the UINavigationBar.
+
+Unfortunately, I was unable to integrate an API into the app in time because our backend group wasn't able to deploy their app in time. However, the plan was to send the API a GET request with all the classes that the user has entered and I would get back a list of CS major and Arts and Sciences distribution requirements which were fulfilled by those classes and also a list of requirements which haven't been filled and the classes corresponding to them. In addition to this, each class would have a rating attached to it, the professor teaching it, and a description of the course. I was planning to take the post request and display all the results in a TableView and then rank them based on the inputted bubble values at the beginning using either Jaccard Similarity or Cosine Similarity. I was planning to expand the queries such that if the user pressed the bubble for Cognitive Science, it would expand to include both Cognitive Science and Psychology. However, due to the difficulties mentioned, I could not integrate this part into our app. Due to this, the search results are currently hardcoded. If I have more time, I definitely would be interesting in working on it so that this is not the case in the future. 
+
 
 Backend Requirements: 
 Our app addresses the backend requirements in the following ways: We used the provided flask boiler plate
@@ -43,6 +51,8 @@ Get Classes:
 All of the end points worked locally, however we were unable to deploy properly.
 
 
-Anything else: We managed to complete a working backend, but we ran into a lot of issues deploying to the Google Cloud. As a result, the iOS app was unable to make use of our API and could only use the CODI API for course listings. The endpoints for the reviews, course listings, and everything else were created and worked on the local machine, but we could not transfer the API to the iOS portion. 
+Anything else: We managed to complete a working backend, but we ran into a lot of issues deploying to the Google Cloud. As a result, the iOS app was unable to make use of our API and could only use the CODI API for course listings. The endpoints for the reviews, course listings, and everything else were created and worked on the local machine, but we could not transfer the API to the iOS portion. Thus, for the iOS portion, the search results are currently hardcoded, but how the API would have been used is described in heavy detail in the writeup above. 
+
+Also, for the iOS part, many external libraries and Cocoapods were used to make the app look much more visually appealing. For example, DynamicButton, NVActivityIndicatorView, and Magnetic were all used in the app. In the future, if I had more time, I would probably try to use one cocoapod to create a side menu of some sort which would allow users more easily navigate between the different views.
 
 
